@@ -1,8 +1,10 @@
 import './App.css';
 let hello = <h1>Hello, World!</h1>
-function App() {
+
+function App(name) {
+  name = 'User';
   return (
-    hello
+    <h1>Hello, {name}</h1>
   );
 }
 
