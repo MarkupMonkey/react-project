@@ -2,7 +2,7 @@ import './App.css';
 let hello = <h1>Hello, World!</h1>
 
 function App(name) {
-  // name = 'User'; // if 'name' isn't passed to function nothing will be rendered and console says errors
+  name = <h1>User</h1> //if the `name` variable contains a JSX expression instead of a string <h1> cannot appear as a child of <h1>.
   return (
     <h1>Hello, {name}</h1>
   );
