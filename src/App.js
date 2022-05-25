@@ -1,4 +1,5 @@
 import React from "react";
+import Counter from "./Counter";
 import Hello from "./Hello"
 import Welcome from "./Welcome"
 
@@ -9,6 +10,7 @@ class Data extends React.Component {
                 <div>
                     <Welcome name='John' />
                     <Hello />
+                    <Counter />
                 </div>
 
             </>
