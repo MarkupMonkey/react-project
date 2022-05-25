@@ -7,7 +7,7 @@ class Data extends React.Component {
         return (
             <>
                 <div>
-                    <Welcome name='Marco' age='28'/>
+                    <Welcome name={<strong>Marco</strong>} age='28'/>
                     <Hello />
                 </div>
                 
