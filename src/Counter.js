@@ -4,26 +4,32 @@ class Counter extends React.Component {
     state = {
         count: this.props.initialValue,
     }
-    
-    componentDidMount(){
-        setInterval(() => {
-            if (this.state.count > 10) {
-                this.setState({ count: this.props.initialValue })
-            } else {
-                this.setState((state) => { // we can pass it an object portion we want update or a callback that recieves the current state and returns the new state
-                    return {
-                        count: state.count + (this.props.incrementBy),
-                    }
-                })
-                this.displayCount = <h1>count: {this.state.count}</h1>
-            }
+
+    componentDidMount() {
+        this._interval = setInterval(() => {
+            this.setState((state) => { // we can pass it an object portion we want update or a callback that recieves the current state and returns the new state
+                return {
+                    count: state.count + (this.props.incrementBy),
+                }
+            })
+            this.displayCount = <h1>count: {this.state.count}</h1>
 
         }, this.props.timeout);
     }
 
+
+    componentWillUnmount() {
+        if (this._interval) {
+            clearInterval(this._interval)
+        }
+    }
+
     render() {
         return (
-            <CounterDisplay count={this.displayCount} />
+            <>
+                {this.state.count <= 11 && <CounterDisplay count={this.displayCount}></CounterDisplay>}
+            </>
+
         );
     }
 }
