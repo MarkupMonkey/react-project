@@ -10,7 +10,7 @@ class Data extends React.Component {
                 <div>
                     <Welcome name='John' />
                     <Hello />
-                    <Counter initialValue={-222} incrementBy={2} timeout={22}/>
+                    <Counter/>
                 </div>
 
             </>
