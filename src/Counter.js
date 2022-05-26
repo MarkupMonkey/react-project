@@ -4,11 +4,8 @@ class Counter extends React.Component {
     state = {
         count: this.props.initialValue,
     }
-
-    constructor(props) {
-        super(props)
-        this.displayCount = <h1>count: {this.state.count}</h1>;
-
+    
+    componentDidMount(){
         setInterval(() => {
             if (this.state.count > 10) {
                 this.setState({ count: this.props.initialValue })
@@ -23,7 +20,6 @@ class Counter extends React.Component {
 
         }, this.props.timeout);
     }
-
 
     render() {
         return (
