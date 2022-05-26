@@ -17,6 +17,11 @@ class Counter extends React.Component {
         }, this.props.timeout);
     }
 
+    componentDidUpdate() {
+        if (this.state.count > 10) {
+            this.setState({ count: this.props.initialValue })
+        }
+    }
 
     componentWillUnmount() {
         if (this._interval) {
