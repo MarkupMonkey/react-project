@@ -7,7 +7,7 @@ class Welcome extends React.Component {
                 
                     {!!this.props.name && <p>Welcome, {this.props.name}!</p>}
                     {!this.props.name && <p>Welcome, user!</p>}
-                    <Age age='28'/>
+                    <Age age={this.props.age}/>
             </div>
 
         )
