@@ -24,6 +24,13 @@ class Login extends React.Component {
         console.log(this.state)
     }
 
+    handlerResetState = () => {
+        this.setState({
+            username: '',
+            password: '',
+            remember: false
+        })
+    }
 
 
 
@@ -38,7 +45,9 @@ class Login extends React.Component {
                     <input name="password" type="password" value={this.state.password} onChange={this.handlerInputChange} />
                     <input name="remember" type="checkbox" checked={this.state.remember} onChange={this.handlerInputChange} />
                 </div>
-
+                <div>
+                    <button onClick={this.handlerResetState}>reset</button>
+                </div>
             </>
         )
     }
