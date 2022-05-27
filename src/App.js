@@ -11,7 +11,7 @@ class Data extends React.Component {
         return (
             <>
                 <div>
-                    <Welcome name='John' />
+                    <Welcome name='John' age={18}/>
                     <Hello />
                     <Counter/>
                     <ClickCounter/>
