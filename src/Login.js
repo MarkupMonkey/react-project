@@ -20,7 +20,7 @@ class Login extends React.Component {
         })
     }
 
-    onLogin = () => {
+     onLogin = () => {
         console.log(this.state)
     }
 
@@ -31,6 +31,8 @@ class Login extends React.Component {
             remember: false
         })
     }
+
+
 
     render() {
         return (
