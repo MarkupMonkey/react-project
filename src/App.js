@@ -7,8 +7,7 @@ import InteractiveWelcome from "./InteractiveWelcome";
 import Login from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import Welcome from "./Welcome"
-
-
+import { TodoList } from "./Todolist";
 class Data extends React.Component {
     render() {
         return (
@@ -22,6 +21,7 @@ class Data extends React.Component {
                     <InteractiveWelcome/>
                     <Login/>
                     <UncontrolledLogin/>
+                    <TodoList/>
                 </div>
 
             </>
