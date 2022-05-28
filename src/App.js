@@ -12,16 +12,18 @@ class Data extends React.Component {
     render() {
         return (
             <>
-                <div>
-                    <Welcome name='John' age={18}/>
+                <div >
+                    <div className="welcome">
+                        <Welcome  name='John' age={18} />
+                    </div>
                     <Hello />
-                    <Counter/>
-                    <ClickCounter/>
-                    <ClickTracker/>
-                    <InteractiveWelcome/>
-                    <Login/>
-                    <UncontrolledLogin/>
-                    <TodoList/>
+                    <Counter />
+                    <ClickCounter />
+                    <ClickTracker />
+                    <InteractiveWelcome />
+                    <Login />
+                    <UncontrolledLogin />
+                    <TodoList />
                 </div>
 
             </>
