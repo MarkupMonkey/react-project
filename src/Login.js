@@ -9,10 +9,7 @@ class Login extends React.Component {
     }
 
     handlerInputChange = (event) => {
-        const value = event.target.value;
-        const name = event.target.name;
-        const type = event.target.type;
-        const checked = event.target.checked;
+        const {value, name, type, checked } = event.target
 
 
         this.setState({
@@ -20,16 +17,18 @@ class Login extends React.Component {
         })
     }
 
-    onLogin = () => {
-        console.log(this.state)
+    handlerOnClick = () => {
+        this.props.onLogin(this.state)
     }
+
+
 
 
     render() {
         return (
             <>
                 <div>
-                    <button onClick={this.onLogin} disabled={!this.state.username + !this.state.password}>login</button>
+                    <button onClick={this.handlerOnClick} disabled={!this.state.username + !this.state.password}>login</button>
                 </div>
                 <div>
                     <input name="username" value={this.state.username} onChange={this.handlerInputChange} />

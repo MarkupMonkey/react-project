@@ -9,6 +9,9 @@ import Welcome from "./Welcome"
 
 
 class Data extends React.Component {
+    onLogin = (state) => {
+        console.log(state)
+    }
     render() {
         return (
             <>
@@ -19,7 +22,7 @@ class Data extends React.Component {
                     <ClickCounter/>
                     <ClickTracker/>
                     <InteractiveWelcome/>
-                    <Login/>
+                    <Login onLogin={this.onLogin}/>
                 </div>
 
             </>
