@@ -12,15 +12,15 @@ export class TodoList extends React.Component {
 
     };
 
-    addNewItem = (event) => {
 
-        let { todo, input } = this.state;
+
+    addNewItem = (event) => {
         event.preventDefault()
-        document.querySelector('form').reset()
+        let { todo, input } = this.state;
+        event.target.elements.input.value = '';
         todo.push(input)
         this.setState({input: ''});
         console.log(todo)
-
     }
 
     render() {
@@ -28,9 +28,9 @@ export class TodoList extends React.Component {
             <>
                 <h3>Me To Do</h3>
 
-                <form>
-                    <input onChange={this.saveInput} />
-                    <button onClick={this.addNewItem}>Add item </button>
+                <form onSubmit={this.addNewItem}>
+                    <input name='input' onChange={this.saveInput} />
+                    <button type='submit'>Add item </button>
                 </form>
                 <ul>
                     {this.state.todo.map((item, index) => {
