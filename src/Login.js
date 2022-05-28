@@ -17,8 +17,10 @@ class Login extends React.Component {
         })
     }
 
+
     handlerOnClick = () => {
         this.props.onLogin(this.state)
+
     }
 
 
