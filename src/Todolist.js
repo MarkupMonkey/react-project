@@ -12,15 +12,22 @@ export class TodoList extends React.Component {
 
     };
 
-
-
     addNewItem = (event) => {
         event.preventDefault()
         let { todo, input } = this.state;
         event.target.elements.input.value = '';
         todo.push(input)
-        this.setState({input: ''});
+        this.setState({ input: '' });
         console.log(todo)
+    }
+
+    resetArray = (event) => {
+        event.preventDefault()
+        
+        this.setState({
+            todo: []
+        })
+
     }
 
     render() {
@@ -31,6 +38,7 @@ export class TodoList extends React.Component {
                 <form onSubmit={this.addNewItem}>
                     <input name='input' onChange={this.saveInput} />
                     <button type='submit'>Add item </button>
+                    <button onClick={this.resetArray}>Reset</button>
                 </form>
                 <ul>
                     {this.state.todo.map((item, index) => {
