@@ -30,10 +30,14 @@ class Counter extends React.Component {
     }
 
     render() {
+        const CounterStyle = {
+            color: 'green',
+            backgroundColor: 'black',
+        }
         return (
-            <>
-                {this.state.count <= 11 && <CounterDisplay count={this.displayCount}></CounterDisplay>}
-            </>
+            <div style={CounterStyle}>
+                {this.state.count <= 11 && <CounterDisplay   count={this.displayCount}></CounterDisplay>}
+            </div>
 
         );
     }
