@@ -23,12 +23,19 @@ export class TodoList extends React.Component {
 
     resetArray = (event) => {
         event.preventDefault()
-        
+
         this.setState({
             todo: []
         })
 
     }
+
+    handlerRemoveFromArray =(event) => {
+        let newTodo = [...this.state.todo];
+        newTodo.splice(event, 1)
+        this.setState({ todo: newTodo })
+    }
+
 
     render() {
         return (
@@ -42,7 +49,9 @@ export class TodoList extends React.Component {
                 </form>
                 <ul>
                     {this.state.todo.map((item, index) => {
-                        return <li key={index}> {item}</li>
+                        return <li key={index}> {item}
+                            <button onClick={() => this.handlerRemoveFromArray(index)}>Remove</button>
+                        </li>
                     })}
                 </ul>
             </>
