@@ -40,7 +40,7 @@ export class TodoList extends React.Component {
     render() {
         return (
             <div >
-                {this.props.render(this.state.todo)}
+                {this.props.children(this.state.todo)}
                 <h3>Me To Do</h3>
                 <form onSubmit={this.addNewItem}>
                     <input name='input' onChange={this.saveInput} />

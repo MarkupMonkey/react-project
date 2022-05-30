@@ -24,11 +24,12 @@ class Data extends React.Component {
                     <InteractiveWelcome />
                     <Login />
                     <UncontrolledLogin />
-                    <TodoList render={()=>{
+                    <TodoList>{()=>{
+                      
                       return(
-                         <></>
+                         <div></div>
                       )
-                    }}>
+                    }}
                      
                     </TodoList>
                 </Container>
