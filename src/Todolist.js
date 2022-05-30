@@ -30,7 +30,7 @@ export class TodoList extends React.Component {
 
     }
 
-    handlerRemoveFromArray =(event) => {
+    handlerRemoveFromArray = (event) => {
         let newTodo = [...this.state.todo];
         newTodo.splice(event, 1)
         this.setState({ todo: newTodo })
@@ -39,9 +39,9 @@ export class TodoList extends React.Component {
 
     render() {
         return (
-            <>
+            <div >
+                {this.props.render(this.state.todo)}
                 <h3>Me To Do</h3>
-
                 <form onSubmit={this.addNewItem}>
                     <input name='input' onChange={this.saveInput} />
                     <button type='submit'>Add item </button>
@@ -54,7 +54,7 @@ export class TodoList extends React.Component {
                         </li>
                     })}
                 </ul>
-            </>
+            </div>
 
         )
     }
