@@ -8,11 +8,12 @@ import Login from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import Welcome from "./Welcome"
 import { TodoList } from "./Todolist";
+import { Container } from "./Container";
 class Data extends React.Component {
     render() {
         return (
             <>
-                <div >
+                <Container>
                     <div className="welcome">
                         <Welcome  name='John' age={18} />
                     </div>
@@ -24,7 +25,7 @@ class Data extends React.Component {
                     <Login />
                     <UncontrolledLogin />
                     <TodoList />
-                </div>
+                </Container>
 
             </>
         )
