@@ -13,7 +13,7 @@ class Data extends React.Component {
     render() {
         return (
             <>
-                <Container>
+                <Container title="My exercitation app">
                     <div className="welcome">
                         <Welcome  name='John' age={18} />
                     </div>
