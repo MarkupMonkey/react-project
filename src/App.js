@@ -11,6 +11,7 @@ import { TodoList } from "./Todolist";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
+import {Sum} from "./Sum";
 class Data extends React.Component {
     state = {
         language: 'en',
@@ -49,6 +50,7 @@ class Data extends React.Component {
                             )
                         }}
                         </TodoList>
+                        <Sum numbers={[100, 96000]}/>
                     </Container>
 
                 </div>
