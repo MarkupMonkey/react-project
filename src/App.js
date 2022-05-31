@@ -50,7 +50,7 @@ class Data extends React.Component {
                             )
                         }}
                         </TodoList>
-                        <Sum numbers={[100, 96000]}/>
+                        <Sum />
                     </Container>
 
                 </div>
