@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import Counterbutton from "./CounterButton";
 
-export function ClickCounter(props) {
-    const [counter, setCounter] = useState(0);
+export function ClickCounter({ initialValue = 0, ...props }) {
+    const [counter, setCounter] = useState(initialValue);
 
-    const handleCounterIncrement = () => {
-        setCounter(state => state + 1)
-    };
-
-    const handlerCounterReset = () => {
-        setCounter(0)
-    }
     useEffect(() => {
-        props.onCounterChange(counter);
+        props.onCounterChange(counter)
     }, [counter, props])
 
+    function handleCounterIncrement() {
+        setCounter(counter => counter + 1)
+    };
+
+    function handlerCounterReset() {
+        setCounter(initialValue)
+    }
     return (
         <>
             <Counterbutton childClick={handleCounterIncrement} />

@@ -16,9 +16,16 @@ import { useState } from "react";
 
 export function App() {
   const [language, setLanguage] = useState('en');
+  const [mount, setMount] = useState(true)
 
+
+  const handleMount = () => {
+    setMount(mount => !mount);
+
+  }
   const onCounterChange = (counter) => {
     console.log(`counter is now: ${counter}`)
+    
   }
 
   function handleLanguageChange() {
@@ -40,7 +47,7 @@ export function App() {
           </div>
           <Hello />
           <Counter />
-          <ClickCounter onCounterChange={onCounterChange} />
+          {mount && <ClickCounter handleMount={handleMount} onCounterChange={onCounterChange} />}
           <ClickTracker />
           <InteractiveWelcome />
           <Login />
