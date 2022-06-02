@@ -1,36 +1,29 @@
-import { useEffect, useState } from "react";
-import Counterbutton from "./CounterButton";
+import { useEffect } from "react";
+import { useCounter } from "./useCounter";
 
-export function ClickCounter({ initialValue = 0, ...props }) {
-    const [counter, setCounter] = useState(initialValue);
-    useEffect(() => {
-        props.onCounterChange(counter)
-    }, [counter, props])
-    useEffect(() => {
-        const interval = setInterval(() => {
-            console.log(`counter is mounted`)
-        }, 1000)
+export function ClickCounter({ initialValue = 0}) {
+    const { counter, onIncrement, onDecrement, onReset } = useCounter(initialValue)
 
+    useEffect(() => {
+        console.log(`counter is mounted`)
         return () => {
-            clearInterval(interval); 
             console.log(`counter is about to be unmount`)
         }
     }, [])
 
-
-
-    function handleCounterIncrement() {
-        setCounter(counter => counter + 1)
-    };
-
-    function handlerCounterReset() {
-        setCounter(initialValue)
-    }
+    useEffect(() => {
+        console.log(`The counter is now ${counter}`)
+        return () => {
+            console.log(`the counter was ${counter}`)
+        }
+    }, [counter])
     return (
         <>
-            <Counterbutton childClick={handleCounterIncrement} />
-            <button onClick={handlerCounterReset}>Reset</button>
-            <h1>on click count: {counter}</h1>
+            <button onClick={onIncrement}>+</button>
+            <button onClick={onDecrement}>-</button>
+            <button onClick={onReset}>Reset</button>
+
+            <h2>Click counter: {counter}</h2>
         </>
     )
 }
