@@ -13,6 +13,8 @@ import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { Sum } from "./Sum";
 import { useState } from "react";
+import GithubUser from './GithubUser';
+import matchers from "@testing-library/jest-dom/matchers";
 
 export function App() {
   const [language, setLanguage] = useState('en');
@@ -47,7 +49,9 @@ export function App() {
           </div>
           <Hello />
           <Counter />
-          <button onClick={handleToggleClickCounter}>Toggle Click Counter</button>
+          <button onClick={handleToggleClickCounter}>
+          Toggle Click Counter
+          </button>
           {mount && <ClickCounter onCounterChange={onCounterChange} />}
           <ClickTracker />
           <InteractiveWelcome />
@@ -60,6 +64,7 @@ export function App() {
           }}
           </TodoList>
           <Sum />
+          <GithubUser username='MarkupMonkey'/>
         </Container>
 
       </div>
