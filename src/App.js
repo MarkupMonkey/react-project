@@ -19,13 +19,13 @@ export function App() {
   const [mount, setMount] = useState(true)
 
 
-  const handleMount = () => {
+  const handleToggleClickCounter = () => {
     setMount(mount => !mount);
 
   }
   const onCounterChange = (counter) => {
     console.log(`counter is now: ${counter}`)
-    
+
   }
 
   function handleLanguageChange() {
@@ -47,13 +47,13 @@ export function App() {
           </div>
           <Hello />
           <Counter />
-          {mount && <ClickCounter handleMount={handleMount} onCounterChange={onCounterChange} />}
+          <button onClick={handleToggleClickCounter}>Toggle Click Counter</button>
+          {mount && <ClickCounter onCounterChange={onCounterChange} />}
           <ClickTracker />
           <InteractiveWelcome />
           <Login />
           <UncontrolledLogin />
           <TodoList>{() => {
-
             return (
               <div></div>
             )
