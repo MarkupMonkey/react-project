@@ -1,21 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useGithubUser } from './useGithubUser';
 
-const GithubUser = ({ username }) => {
-  const [userData, setUserData] = useState();
+export const GithubUser = ({ username }) => {
+  const { userData } = useGithubUser(username);
 
-  useEffect(() => {
-    const fetchUser = async (username) => {
-      try {
-        const res = await fetch(`https://api.github.com/users/${username}`);
-        const data = await res.json();
-        setUserData(data);
-      } catch (err) {
-        throw new Error(err.message);
-      }
-    };
-
-    fetchUser(username);
-  }, [username]);
 
   return (
     userData && (
@@ -26,5 +13,3 @@ const GithubUser = ({ username }) => {
     )
   );
 };
-
-export default GithubUser;

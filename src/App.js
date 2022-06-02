@@ -1,12 +1,11 @@
 import React from "react";
+import {GithubUser} from './GithubUser';
 
-
-
-export function App() {
+export function App(){
 
   return (
     <>
-
+      <GithubUser username='markupmonkey'/>
     </>
   )
 }
