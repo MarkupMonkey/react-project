@@ -3,7 +3,7 @@ import Counter from "./Counter";
 import Hello from "./Hello"
 import Welcome from "./Welcome"
 
-class Data extends React.Component {
+class App extends React.Component {
     render() {
         return (
             <>
@@ -17,4 +17,4 @@ class Data extends React.Component {
     }
 }
   
-esport default Data;
+export default App;
