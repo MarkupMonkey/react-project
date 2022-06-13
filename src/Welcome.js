@@ -9,9 +9,8 @@ class Welcome extends React.Component {
                     {this.props.age > 18 && this.props.age < 65 && <Age age={this.props.age}/>}
             </div>
 
-        )
+    )
 
-    }
 }
 
-export default Welcome 
+export default Welcome

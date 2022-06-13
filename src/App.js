@@ -2,6 +2,7 @@ import React from "react";
 import Hello from "./Hello"
 import Welcome from "./Welcome"
 
+
 class Data extends React.Component {
     render() {
         return (
@@ -10,10 +11,9 @@ class Data extends React.Component {
                     <Welcome name={<strong>Marco</strong>} age={19}/>
                     <Hello />
                 </div>
-
-            </>
-        )
-    }
+          
+          </>
+     )
 }
-
-export default Data;
+  
+esport default Data;
