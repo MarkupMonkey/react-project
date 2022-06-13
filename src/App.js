@@ -7,13 +7,13 @@ class Data extends React.Component {
         return (
             <>
                 <div>
-                    <Welcome name='John' age={28}/>
+
+                    <Welcome name='John' age={28}/>          
                     <Hello />
                 </div>
-
-            </>
-        )
-    }
+          
+          </>
+     )
 }
-
-export default Data;
+  
+esport default Data;
