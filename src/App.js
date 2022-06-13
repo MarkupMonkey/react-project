@@ -14,5 +14,5 @@ class Data extends React.Component {
         )
     }
 }
-
-export default Data;
+  
+esport default Data;
