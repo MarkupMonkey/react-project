@@ -1,11 +1,19 @@
 import React from "react";
-import {GithubUser} from './GithubUser';
+import Hello from "./Hello"
+import Welcome from "./Welcome"
 
-export function App(){
 
-  return (
-    <>
-      <GithubUser username='markupmonkey'/>
-    </>
-  )
+class Data extends React.Component {
+    render() {
+        return (
+            <>
+                <div>
+                    <Welcome name={<strong>Marco</strong>} age={19}/>
+                    <Hello />
+                </div>
+          
+          </>
+     )
 }
+  
+esport default Data;
