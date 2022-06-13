@@ -8,7 +8,7 @@ class Data extends React.Component {
         return (
             <>
                 <div>
-                    <Welcome name='John' />
+                    <Welcome name='John' age={16}/>
                     <Hello />
                     <Counter initialValue={6} incrementBy={6} timeout={600}/>
                 </div>
@@ -16,5 +16,5 @@ class Data extends React.Component {
         )
     }
 }
-
-export default Data;
+  
+esport default Data;
