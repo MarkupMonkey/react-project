@@ -1,20 +1,13 @@
 import React from "react";
-import Counter from "./Counter";
-import Hello from "./Hello"
-import Welcome from "./Welcome"
+import {GithubUser} from './GithubUser';
+import { Login } from "./Login";
 
-class Data extends React.Component {
-    render() {
-        return (
-            <>
-                <div>
-                    <Welcome name='John' age={16}/>
-                    <Hello />
-                    <Counter initialValue={6} incrementBy={6} timeout={600}/>
-                </div>
-            </>
-        )
-    }
+export function App(){
+
+  return (
+    <>
+      <GithubUser username='markupmonkey'/>
+      <Login/>
+    </>
+  )
 }
-  
-esport default Data;
