@@ -1,13 +1,11 @@
 import React from "react";
-import {GithubUser} from './GithubUser';
-import { Login } from "./Login";
+import { CarDetails } from './components/CarDetails';
 
-export function App(){
+export function App() {
 
   return (
     <>
-      <GithubUser username='markupmonkey'/>
-      <Login/>
+      <CarDetails initialData={{ model: 'Celica', year: 2006, color: 'black' }} />
     </>
   )
 }
