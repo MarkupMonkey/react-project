@@ -2,6 +2,7 @@ import React from "react";
 import { LanguageContext } from "./LanguageContext";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { useState } from "react";
+import { ClickCounter } from "./ClickCounter";
 
 export function App() {
 
@@ -16,6 +17,7 @@ export function App() {
             <LanguageContext.Provider value={language}>
                 <DisplayLanguage />
             </LanguageContext.Provider>
+            <ClickCounter/>
         </>
     )
 }
