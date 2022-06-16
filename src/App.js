@@ -1,15 +1,13 @@
-import React from "react";
-import FiltredList from './FiltredList';
 
-const list = [
-    { name: 'Jhon', age: 27, id: 1 },
-    { name: 'Paul', age: 66, id: 2 },
-    { name: 'Peter', age: 13, id: 3 },
-]
+import { Routes, Route } from 'react-router-dom';
+import Welcome from './Welcome';
 export function App() {
+
     return (
         <>
-            <FiltredList list={list}/>
+            <Routes>
+                <Route path='/' element={<Welcome name='Monkey' age={28}/>}/>
+            </Routes>
         </>
     )
 }
