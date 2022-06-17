@@ -1,12 +1,22 @@
-import { useEffect } from 'react';
-import { useGithubUser } from './useGithubUser';
+import { useEffect, useState } from 'react';
 
-export function GithubUser({ username }) {
+const GithubUser = ({ username }) => {
+  const [userData, setUserData] = useState();
 
-  const { userData, onFetchUser } = useGithubUser();
   useEffect(() => {
-    onFetchUser(username)
-  }, [username, onFetchUser])
+    const fetchUser = async (username) => {
+      try {
+        const res = await fetch(`https://api.github.com/users/${username}`);
+        const data = await res.json();
+        setUserData(data);
+      } catch (err) {
+        throw new Error(err.message);
+      }
+    };
+
+    fetchUser(username);
+  }, [username]);
+
   return (
     userData && (
       <div>
@@ -16,3 +26,5 @@ export function GithubUser({ username }) {
     )
   );
 };
+
+export default GithubUser; 
