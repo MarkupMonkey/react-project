@@ -5,6 +5,7 @@ import { Container } from './Container';
 import { ClickCounter } from './ClickCounter';
 import ShowGithubUser from './ShowGithubUser';
 import { NotFound } from './NotFound';
+import { GithubUsersList } from './GithubUsersList';
 
 export function App() {
 
@@ -24,7 +25,9 @@ export function App() {
             <Routes>
                 <Route path='/' element={<Welcome name='Monkey' />} />
                 <Route path='/counter' element={<ClickCounter />} />
-                <Route path='/users/:username' element={<ShowGithubUser />} />
+                <Route path='/users' element={<GithubUsersList />}>
+                    <Route path=':username' element={<ShowGithubUser/>}/>
+                </Route>
                 <Route path='*' element={<NotFound />} />
             </Routes>
         </Container>
