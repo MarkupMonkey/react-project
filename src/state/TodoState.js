@@ -23,7 +23,7 @@ export const clearTodos = () => {
     return { type: CLEAR }
 }
 
-export const todoReducer = (state = defaultState, action) => {
+export const todosReducer = (state = defaultState, action) => {
     switch (action.type) {
         case ADD: {
             return [...state, action.payload]
