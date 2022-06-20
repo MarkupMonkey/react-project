@@ -16,8 +16,12 @@ store.subscribe(() => {
     console.log(store.getState())
 })
 
-// store.dispatch(incrementCounter(5))
-// store.dispatch(incrementCounter(3))
+store.dispatch(incrementCounter(3))
+store.dispatch(incrementCounter(3))
+store.dispatch(decrementCounter(2))
+store.dispatch(incrementCounter(1))
+store.dispatch(decrementCounter(5))
+store.dispatch(resetCounter())
 store.dispatch(addTodo({ id: 1, title: 'Html5', completed: true }));
 store.dispatch(addTodo({ id: 2, title: 'Css', completed: true }));
 store.dispatch(addTodo({ id: 3, title: 'JavaScript', completed: true }));
