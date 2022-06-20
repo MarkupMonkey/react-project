@@ -1,5 +1,4 @@
 import { createStore } from "redux";
-import { CounterReducer } from "./CounterState";
-
-export const store = createStore(CounterReducer)
+import { todoReducer } from "./TodoState";
+export const store = createStore(todoReducer)
 
