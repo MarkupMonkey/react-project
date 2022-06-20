@@ -12,7 +12,7 @@ import { addTodo, removeTodo, editTodo, clearTodos } from './state/TodoState';
 //     </>
 // )
 
-store.subscribe(() => {
+store.subscribe(() => { // Subscribe to the store and verify that each state update trigger the subscription callback
     console.log(store.getState())
 })
 
